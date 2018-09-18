@@ -1,6 +1,5 @@
 <html>
 <head>
-<title>Clock</title>
 <style>
 #secDiv {
 background-color: red;
@@ -46,6 +45,23 @@ transform-origin: top center;
 }
 </style>
 <title>Using JS to show a progress bar based on time elapsed between two points</title>
+
+<script>
+
+console.log("");
+console.log("==============================");
+console.log("");
+console.log("Made by ItsBrian:");
+console.log("");
+console.log("• www.Twitter.com/_ItsBrian_");
+console.log("• www.Github.com/ItsBrian");
+console.log("• www.ItsBrian.net");
+console.log("");
+console.log("==============================");
+console.log("");
+
+</script>
+
 <script type="text/javascript">
 // This is only here for illustration purposes. See comments below for how to create new start/end points
 var randomStart = 24;
@@ -73,7 +89,6 @@ document.getElementById("progress").innerHTML = progress + ' %';
 document.getElementById("secDiv").style = "transform: rotate(" + ((sec * 6) + 181) + "deg);";
 document.getElementById("minDiv").style = "transform: rotate(" + ((mins * 6) + 180) + "deg);";
 document.getElementById("hourDiv").style = "transform: rotate(" + ((hrs * 15) + 180) + "deg);";	
-document.getElementById("oldp").style.width = (progress * 300) + 'px';
 }
 function roundDown(floating) {
 var rounded = Math.round(floating * 100) / 100;
@@ -103,7 +118,8 @@ window.setInterval(timeElapsed, 1000);
 <br /><progress id="seconds" max="60" value="0"></progress></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-<center>
+<center><div style="transform: scale(1);">
+
 <div id="secDiv" style="transform: rotate(00deg);"></div>
 <div style="transform: translate(0px, -231px)">
 <div id="minDiv" style="transform: rotate(00deg) translate(0px, 0px);"></div></div>
@@ -117,5 +133,6 @@ window.setInterval(timeElapsed, 1000);
 <div id="hourDiv" style=""></div>
 </div>
 
+</div>
 </center></body>
 </html>
