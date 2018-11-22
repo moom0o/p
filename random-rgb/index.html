@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Random RGB</title>
+  <title>Random RGB</title>
 <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 <style>
 * {font-family: Play;}
 </style>
 </head>
-<body onload="func()">
+<body onload="func()" id="bg">
 
 <center>
-<div id="bg" style="width:100%;height:97vh;">
-<br>
-<div style="height:40%"></div>
+<div style="height:35vh"></div>
 <button type="button" style="font-size:30px;" id="btn" onclick="func()">New Random Color</button>
 <h1 id="p"></h1>
-</div>
 </center>
 
 
@@ -33,6 +30,7 @@ document.getElementById("p").style.color = "rgb(" + o1 + ", " + o2 + ", " + o3 +
 document.getElementById("btn").style.border = "3px solid rgb(" + (o1-40) + ", " + (o2-40) + ", " + (o3-40) + ")";
 document.getElementById("btn").style.backgroundColor = "rgb(" + o1 + ", " + o2 + ", " + o3 + ")";
 document.getElementById("btn").style.color = "rgb(" + r1 + ", " + r2 + ", " + r3 + ")";
+document.body.style.backgroundColor = "rgb(" + r1 + ", " + r2 + ", " + r3 + ")";
 }
 </script>
 
