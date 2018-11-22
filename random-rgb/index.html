@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Random RGB</title>
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+<style>
+* {font-family: Play;}
+</style>
+</head>
+<body onload="func()">
+
+<center>
+<div id="bg" style="width:100%;height:97vh;">
+<br>
+<div style="height:40%"></div>
+<button type="button" style="font-size:30px;" id="btn" onclick="func()">New Random Color</button>
+<h1 id="p"></h1>
+</div>
+</center>
+
+
+<script>
+function func() {
+var r1 = Math.round(Math.random()*255);
+var r2 = Math.round(Math.random()*255);
+var r3 = Math.round(Math.random()*255);
+var o1 = (255 - r1);
+var o2 = (255 - r2);
+var o3 = (255 - r3);
+document.getElementById("p").innerHTML = "rgb(" + r1 + ", " + r2 + ", " + r3 + ")";
+document.getElementById("bg").style.backgroundColor = "rgb(" + r1 + ", " + r2 + ", " + r3 + ")";
+document.getElementById("p").style.color = "rgb(" + o1 + ", " + o2 + ", " + o3 + ")";
+document.getElementById("btn").style.border = "3px solid rgb(" + (o1-40) + ", " + (o2-40) + ", " + (o3-40) + ")";
+document.getElementById("btn").style.backgroundColor = "rgb(" + o1 + ", " + o2 + ", " + o3 + ")";
+document.getElementById("btn").style.color = "rgb(" + r1 + ", " + r2 + ", " + r3 + ")";
+}
+</script>
+
+</body>
+</html>
