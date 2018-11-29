@@ -127,11 +127,13 @@ document.getElementById("outputHOOFDINGtitle").innerHTML = titel;
 document.getElementById("inputALL").style.display = "none";
 document.getElementById("outputALL").style.display = "block";
 document.title='\u00A0';
-alert(" \n Klik op 'Meer instellingen' in het print-menu \n en schakel 'Kop- en voettekst' uit \n om overbodige tekst te verbergen.");
+alert(" \n Klik op 'Meer instellingen' in het print-menu \n en schakel 'Kop- en voettekst' uit \n om overbodige tekst uit te verbergen.");
+setTimeout(function(){ 
 window.print();
 document.getElementById("inputALL").style.display = "block";
 document.getElementById("outputALL").style.display = "none";
 document.title = title;
+}, 300);
 }
 </script>
 
