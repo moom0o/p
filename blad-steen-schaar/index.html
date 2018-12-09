@@ -133,7 +133,7 @@ button:focus {outline:0;}
 
 <br><br>
 
-<p id="outputBot">Klik op één van de foto's om<i>Blad, Steen, Schaar</i> te spelen tegen een robot!</p>
+<p id="outputBot">Klik op één van de foto's om <i>Blad, Steen, Schaar</i> te spelen tegen een robot!</p>
 <p id="outputUser"></p>
 <p id="outputGame"></p>
 
@@ -203,7 +203,7 @@ function calculate(){
 }
 
 function scorez(){
-    document.getElementById("outputScores").innerHTML = "Scores: <br> You: " + score.User + "<br>Bot: " + score.Bot;
+    document.getElementById("outputScores").innerHTML = "Scores: <br> Jij: " + score.User + "<br>Robot: " + score.Bot;
     if(score.User < score.Bot){
         document.getElementById("outputStatus").innerHTML = "Je bent momentaal aan het <i>verliezen </i> tegen de robot!";
     } else if(score.User > score.Bot){
