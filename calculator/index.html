@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style>
+button {
+width: 30px;
+height: 30px;
+padding: 5px;
+margin: 2px;
+border: .5px solid black;
+outline: none;
+transition: transform .05s;
+}
+
+body {
+margin-top: 20vh;
+}
+
+#input {
+background-color: #93b18f;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 5px;
+text-align: justify;
+border-radius: 5px;
+border: none;
+margin-bottom: 3px;
+width: 145px;
+border: .5px solid black;
+color: black;
+}
+
+#nul {
+width: 68px;
+}
+
+button:hover {
+transform: scale(1.1);
+}
+
+button:active{
+background-color: #9b9b9b;
+transform: scale(1.15);
+text-decoration: none;
+border: .5px solid black;
+}
+
+#rekenmachine {
+border: 0.5px solid black;
+border-radius: 10px;
+width: 200px;
+height: 205px;
+padding-top: 30px;
+background-color: #f2f2f2;
+}
+
+</style>
+</head>
+<body>
+
+<center>
+
+<div id="rekenmachine">
+
+<input id="input" value="" disabled>
+
+<br>
+
+<button onclick="zeven();">7</button>
+<button onclick="acht();">8</button>
+<button onclick="negen();">9</button>
+
+<button onclick="plus();">+</button>
+
+<br>
+
+<button onclick="vier();">4</button>
+<button onclick="vijf();">5</button>
+<button onclick="zes();">6</button>
+
+<button onclick="min();">-</button>
+
+<br>
+
+<button onclick="een();">1</button>
+<button onclick="twee();">2</button>
+<button onclick="drie();">3</button>
+
+<button onclick="maal();">*</button>
+
+<br>
+
+<button onclick="nul();" id="nul">0</button>
+
+<button onclick="uitkomst();">=</button>
+
+<button onclick="deel();">/</button>
+
+<br>
+
+</div>
+
+</center>
+
+<input id="saveVar" style="display:none;" disabled>
+
+<input id="saveBerekening" style="display:none;" disabled>
+
+<script>
+function nul(){document.getElementById("input").value=document.getElementById("input").value+"0"}
+function een(){document.getElementById("input").value=document.getElementById("input").value+"1"}
+function twee(){document.getElementById("input").value=document.getElementById("input").value+"2"}
+function drie(){document.getElementById("input").value=document.getElementById("input").value+"3"}
+function vier(){document.getElementById("input").value=document.getElementById("input").value+"4"}
+function vijf(){document.getElementById("input").value=document.getElementById("input").value+"5"}
+function zes(){document.getElementById("input").value=document.getElementById("input").value+"6"}
+function zeven(){document.getElementById("input").value=document.getElementById("input").value+"7"}
+function acht(){document.getElementById("input").value=document.getElementById("input").value+"8"}
+function negen(){document.getElementById("input").value=document.getElementById("input").value+"9"}
+
+function plus(){
+	var getal1 = document.getElementById("input").value;
+    document.getElementById("saveVar").value = getal1;
+    document.getElementById("saveBerekening").value = "+";
+    document.getElementById("input").value = "";
+}
+
+function min(){
+	var getal1 = document.getElementById("input").value;
+    document.getElementById("saveVar").value = getal1;
+    document.getElementById("saveBerekening").value = "-";
+    document.getElementById("input").value = "";
+}
+
+function maal(){
+	var getal1 = document.getElementById("input").value;
+    document.getElementById("saveVar").value = getal1;
+    document.getElementById("saveBerekening").value = "*";
+    document.getElementById("input").value = "";
+}
+
+function deel(){
+	var getal1 = document.getElementById("input").value;
+    document.getElementById("saveVar").value = getal1;
+    document.getElementById("saveBerekening").value = "/";
+    document.getElementById("input").value = "";
+}
+
+function uitkomst(){
+	var getal1 = (document.getElementById("saveVar").value);
+	var getal2 = (document.getElementById("input").value);
+    var berekening = document.getElementById("saveBerekening").value;
+         if (berekening == "+"){var uitkomst = +getal1 + +getal2;}
+    else if (berekening == "-"){var uitkomst = +getal1 - +getal2;}
+    else if (berekening == "*"){var uitkomst = +getal1 * +getal2;}
+    else if (berekening == "/"){var uitkomst = +getal1 / +getal2;}
+    else {var uitkomst = "error";}
+    document.getElementById("input").value = uitkomst;
+}
+</script>
+
+</body>
+</html>
+
