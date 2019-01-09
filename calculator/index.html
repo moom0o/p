@@ -12,11 +12,9 @@ border: .5px solid black;
 outline: none;
 transition: transform .05s;
 }
-
 body {
 margin-top: 20vh;
 }
-
 #input {
 background-color: #93b18f;
 padding-bottom: 20px;
@@ -30,32 +28,27 @@ width: 145px;
 border: .5px solid black;
 color: black;
 }
-
 #nul {
 width: 68px;
 }
-
 button:hover {
 transform: scale(1.1);
 }
-
 button:active{
 background-color: #9b9b9b;
 transform: scale(1.15);
 text-decoration: none;
 border: .5px solid black;
 }
-
 #rekenmachine {
 border: 0.5px solid black;
 border-radius: 10px;
 width: 200px;
-height: 205px;
+height: 235px;
 padding-top: 30px;
 background-color: #f2f2f2;
 transform: scale(2);
 }
-
 </style>
 </head>
 <body>
@@ -94,9 +87,17 @@ transform: scale(2);
 
 <button onclick="nul();" id="nul">0</button>
 
-<button onclick="uitkomst();">=</button>
+<button onclick="verw();">Del</button>
 
 <button onclick="deel();">/</button>
+
+<br>
+
+<button onclick="uitkomst();" id="nul">=</button>
+
+<button onclick="kleer();">Clr</button>
+
+<button onclick="macht();">^</button>
 
 <br>
 
@@ -109,6 +110,20 @@ transform: scale(2);
 <input id="saveBerekening" style="display:none;" disabled>
 
 <script>
+function kleer(){
+	document.getElementById("input").value = "";
+    document.getElementById("saveVar").value = "";
+    document.getElementById("saveBerekening").value = "";
+    console.log("Cleared");
+}
+
+function verw(){
+	var getal = document.getElementById("input").value;
+    var nieuwGetal = getal.slice(0, -1);
+    document.getElementById("input").value = nieuwGetal;
+    console.log("Delete: " + getal + " -> " + nieuwGetal);
+}
+
 function nul(){document.getElementById("input").value=document.getElementById("input").value+"0"}
 function een(){document.getElementById("input").value=document.getElementById("input").value+"1"}
 function twee(){document.getElementById("input").value=document.getElementById("input").value+"2"}
@@ -126,28 +141,30 @@ function plus(){
     document.getElementById("saveBerekening").value = "+";
     document.getElementById("input").value = "";
 }
-
 function min(){
 	var getal1 = document.getElementById("input").value;
     document.getElementById("saveVar").value = getal1;
     document.getElementById("saveBerekening").value = "-";
     document.getElementById("input").value = "";
 }
-
 function maal(){
 	var getal1 = document.getElementById("input").value;
     document.getElementById("saveVar").value = getal1;
     document.getElementById("saveBerekening").value = "*";
     document.getElementById("input").value = "";
 }
-
 function deel(){
 	var getal1 = document.getElementById("input").value;
     document.getElementById("saveVar").value = getal1;
     document.getElementById("saveBerekening").value = "/";
     document.getElementById("input").value = "";
 }
-
+function macht(){
+	var getal1 = document.getElementById("input").value;
+    document.getElementById("saveVar").value = getal1;
+    document.getElementById("saveBerekening").value = "^";
+    document.getElementById("input").value = "";
+}
 function uitkomst(){
 	var getal1 = (document.getElementById("saveVar").value);
 	var getal2 = (document.getElementById("input").value);
@@ -156,11 +173,17 @@ function uitkomst(){
     else if (berekening == "-"){var uitkomst = +getal1 - +getal2;}
     else if (berekening == "*"){var uitkomst = +getal1 * +getal2;}
     else if (berekening == "/"){var uitkomst = +getal1 / +getal2;}
+    else if (berekening == "^"){var uitkomst = Math.pow(+getal1, +getal2)}
     else {var uitkomst = "error";}
     document.getElementById("input").value = uitkomst;
+    console.log("Berekening: " + getal1 + " " + berekening + " " + getal2 + " = " + uitkomst);
+    if (getal2 == "NaN"){
+    	window.open("https://itsbrian.github.io/random/snake.html", "_blank", "toolbar=no,scrollbars=no,resizable=no,top=500,left=500,width=400,height=400,titlebar=no,status=no,menubar=no");
+    } else {
+    	return;
+    }
 }
 </script>
 
 </body>
 </html>
-
