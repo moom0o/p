@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Minehut - Top Servers</title>
+            
+            <meta charset='UTF-8'>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" href="icon.png">
+            <meta name='keywords' content='minehut, crystalmc, torn, itsbrian, superleaguegaming, superleague'>
+            <meta name='description' content='See a list of the top 5 most popular servers on Minehut'>
+            <meta name='language' content='EN'>
+            <meta name='robots' content='index,follow'>
+            <meta name='abstract' content='See a list of the top 5 most popular servers on Minehut'>
+            <meta name='designer' content='Github.com/ItsBrian'>
+            <meta name='owner' content='Github.com/ItsBrian'>
+            <meta name='url' content='http://ItsBrian.github.io/g/Pewdiepie-VS-Tseries/'>
+            <meta name='pagename' content='Minehut - Top Servers'>
+            <meta name='subtitle' content='See a list of the top 5 most popular servers on Minehut'>
+            <meta name='HandheldFriendly' content='True'>
+            <meta name='MobileOptimized' content='320'>
+
+            <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/minecraftia" type="text/css"/>
+        <style>
+            table {
+                border: 7.5px solid transparent;
+                border-image: url(border-table.png) 9.4 round;
+                background-color: #C6C6C6;
+                border-radius: 20px;
+                width: 500px;
+                outline: none;
+                padding: 7px;
+                margin: 0px;
+                table-layout: fixed;
+                padding-top: 40px;
+            }
+
+            #newBody {
+                margin-top: 35vh;
+            }
+
+            #tableTitle {
+                transform: translate(0px,55px);
+                font-family: minecraftia;
+                font-size: 18px;
+                color: #484848;
+                text-shadow: 2px 2px #A3A3A3;
+            }
+
+            td {
+                text-align: center;
+                /* border: 3px solid transparent;
+                border-image: url(border-td.png) 3 round; */
+                background: url("table-td-bg.png") no-repeat;
+                background-size: 100%;
+                padding: 0px;
+                margin: 500px;
+                width: 10px;
+                height: 94px;
+                outline: none;
+                transform: scale(1.021);
+                padding-bottom: -10px;
+            }
+
+            tr {
+                width: 100%;
+                padding: 0px;
+                margin: 0px;
+                outline: none;
+            }
+            
+            td img {
+                width: 75%;
+                height: 75%;
+                padding-top: 5px;
+                transition: transform .25s;
+            }
+
+            td img:active {
+                transform: rotate(180deg) scaleY(-1);
+            }
+
+            .tooltip {
+                position: relative;
+                display: inline-block;
+            
+            }
+
+            td:hover {
+                background: url("table-td-bg-selected.png") no-repeat;
+                background-size: 100%;
+            }
+
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                background-color: #110211;
+                color: #fff;
+                text-align: left;
+                border-radius: 10px;
+                font-family: MinecraftiaRegular;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -60px;
+                opacity: 0;
+                transition: opacity 0s;
+                border: 7.5px solid #110211;
+                box-shadow: 0px 0px 0px 5px #25015B inset;
+                padding: 10px;
+            }
+
+
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .tooltiptext {
+                width: 1000px;
+            }
+
+            #mBlack       {color: #000000;}
+            #mDarkGreen   {color: #009400;}
+            #mDarkRed     {color: #890000;}
+            #mGold        {color: #D58E00;}
+            #mDarkGray    {color: #484848;}
+            #mGreen       {color: #48DB48;}
+            #mRed         {color: #E54C4C;}
+            #mYellow      {color: #D7D748;}
+            #mDarkBlue    {color: #000096;}
+            #mDarkAqua    {color: #009090;}
+            #mDarkPurple  {color: #8F0390;}
+            #mGray        {color: #A3A3A3;}
+            #mBlue        {color: #4747D4;}
+            #mAqua        {color: #47D6D6;}
+            #mLightPurple {color: #CD44CD;}
+            #mWhite       {color: #D7D7D7;}
+            
+            body {
+                background-color: #82ACFC;
+                background: url("background.png");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center; 
+            }
+
+        </style>
+    </head>
+    <body onload="resizeTooltips();getServers();">
+        <center>
+            <div id="newBody">
+                    <p id="tableTitle">Minehut - Top servers</p>
+            <table>
+                <tr>
+                    <td>
+                        <div class="tooltip">
+                            <img src="icon-default.png" id="icon0">
+                            <div id="tooltiptext0" class="tooltiptext">
+                                    <span style="color:#00AAAA;" id="serverName0">Minehut</span><br><br>
+                                                                 <span id="motd0">A Minehut Server</span><br><br>
+                                    <span style="color:#AAAAAA" id="playercount0">0/0 playing</span>
+                             </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="tooltip">
+                            <img src="icon-default.png" id="icon1">
+                            <div id="tooltiptext1" class="tooltiptext">
+                                    <span style="color:#00AAAA;" id="serverName1">Minehut</span><br><br>
+                                                                 <span id="motd1">A Minehut Server</span><br><br>
+                                    <span style="color:#AAAAAA" id="playercount1">0/0 playing</span>
+                                 </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="tooltip">
+                            <img src="icon-default.png" id="icon2">
+                            <div id="tooltiptext2" class="tooltiptext">
+                                    <span style="color:#00AAAA;" id="serverName2">Minehut</span><br><br>
+                                                                 <span id="motd2">A Minehut Server</span><br><br>
+                                    <span style="color:#AAAAAA" id="playercount2">0/0 playing</span>
+                                 </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="tooltip">
+                            <img src="icon-default.png" id="icon3">
+                            <div id="tooltiptext3" class="tooltiptext">
+                                    <span style="color:#00AAAA;" id="serverName3">Minehut</span><br><br>
+                                                                 <span id="motd3">A Minehut Server</span><br><br>
+                                    <span style="color:#AAAAAA" id="playercount3">0/0 playing</span>
+                                 </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="tooltip">
+                            <img src="icon-default.png" id="icon4">
+                            <div id="tooltiptext4" class="tooltiptext">
+                                    <span style="color:#00AAAA;" id="serverName4">Minehut</span><br><br>
+                                                                 <span id="motd4">A Minehut Server</span><br><br>
+                                    <span style="color:#AAAAAA" id="playercount4">0/0 playing</span>
+                                 </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </center>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        motdChanges = +0;
+
+        String.prototype.allReplace = function(obj) {
+        var retStr = this;
+        for (var x in obj) {
+        retStr = retStr.replace(new RegExp(x, 'g'), obj[x]);
+        }
+        return retStr;
+        };
+
+        function resizeTooltips(){
+            console.log("Resizing tooltips");
+
+            width0 = document.getElementById("motd0").getBoundingClientRect();
+            var actualWidth0 = width0.width;
+            if (+actualWidth0 < +150){
+              updatedWidth0 = +150;
+            } else {updatedWidth0 = actualWidth0}
+            document.getElementById("tooltiptext0").style.width = (+updatedWidth0 + +50) + "px"; 
+
+            width1 = document.getElementById("motd1").getBoundingClientRect();
+            var actualWidth1 = width1.width;
+            if (+actualWidth1 < +150){
+              updatedWidth1 = +150;
+            } else {updatedWidth1 = actualWidth1}
+            document.getElementById("tooltiptext1").style.width = (+updatedWidth1 + +50) + "px"; 
+
+            width2 = document.getElementById("motd2").getBoundingClientRect();
+            var actualWidth2 = width2.width;
+            if (+actualWidth2 < +150){
+              updatedWidth2 = +150;
+            } else {updatedWidth2 = actualWidth2}
+            document.getElementById("tooltiptext2").style.width = (+updatedWidth2 + +50) + "px"; 
+
+            width3 = document.getElementById("motd3").getBoundingClientRect();
+            var actualWidth3 = width3.width;
+            if (+actualWidth3 < +150){
+              updatedWidth3 = +150;
+            } else {updatedWidth3 = actualWidth3}
+            document.getElementById("tooltiptext3").style.width = (+updatedWidth3 + +50) + "px"; 
+
+            width4 = document.getElementById("motd4").getBoundingClientRect();
+            var actualWidth4 = width4.width;
+            if (+actualWidth4 < +150){
+              updatedWidth4 = +150;
+            } else {updatedWidth4 = actualWidth4}
+            document.getElementById("tooltiptext4").style.width = (+updatedWidth4 + +50) + "px"; 
+        }
+
+        function getServers(){
+
+     $.getJSON('https://api.minehut.com/network/top_servers', function(data) {
+         console.log("Getting server names");
+         document.getElementById("serverName0").innerHTML = data.servers[0].name;
+         document.getElementById("serverName1").innerHTML = data.servers[1].name;
+         document.getElementById("serverName2").innerHTML = data.servers[2].name;
+         document.getElementById("serverName3").innerHTML = data.servers[3].name;
+         document.getElementById("serverName4").innerHTML = data.servers[4].name;
+
+        console.log("Getting playercounts");
+        document.getElementById("playercount0").innerHTML = data.servers[0].playerCount + "/" + data.servers[0].maxPlayers + " playing";
+        document.getElementById("playercount1").innerHTML = data.servers[1].playerCount + "/" + data.servers[1].maxPlayers + " playing";
+        document.getElementById("playercount2").innerHTML = data.servers[2].playerCount + "/" + data.servers[2].maxPlayers + " playing";
+        document.getElementById("playercount3").innerHTML = data.servers[3].playerCount + "/" + data.servers[3].maxPlayers + " playing";
+        document.getElementById("playercount4").innerHTML = data.servers[4].playerCount + "/" + data.servers[4].maxPlayers + " playing";
+
+        getMotd();
+
+            function getMotd(){
+            console.log("Getting MOTD's");
+            
+            motd0 = data.servers[0].motd;
+        //  motd0 = "&00&11&22&33&44&55&66&77&88&99&aa&bb&cc&dd&ee&ff"
+            document.getElementById("motd0").innerHTML =(motd0.allReplace({
+                '§' : '&',
+                '§' : '&',
+                '&k' : '',
+                '&m' : '',
+                '&o' : '',
+                '&l' : '',
+                '&n' : '',
+                '\\n' : '<br>',
+                '&r' : '</span><span id="mWhite">',
+                '&0' : '</span><span id="mBlack">',
+                '&1' : '</span><span id="mDarkBlue">',
+                '&2' : '</span><span id="mDarkGreen">',
+                '&3' : '</span><span id="mDarkAqua">',
+                '&4' : '</span><span id="mDarkRed">',
+                '&5' : '</span><span id="mDarkPurple">',
+                '&6' : '</span><span id="mGold">',
+                '&7' : '</span><span id="mGray">',
+                '&8' : '</span><span id="mDarkGray">',
+                '&9' : '</span><span id="mBlue">',
+                '&a' : '</span><span id="mGreen">',
+                '&b' : '</span><span id="mAqua">',
+                '&c' : '</span><span id="mRed">',
+                '&d' : '</span><span id="mLightPurple">',
+                '&e' : '</span><span id="mYellow">',
+                '&f' : '</span><span id="mWhite">',
+        }));
+
+        motd1 = data.servers[1].motd;
+        document.getElementById("motd1").innerHTML =(motd1.allReplace({'§' : '&','§' : '&','&k' : '','&m' : '','&o' : '','&l' : '','&n' : '','&r' : '</span><span id="mWhite">','&0' : '</span><span id="mBlack">','&1' : '</span><span id="mDarkBlue">','&2' : '</span><span id="mDarkGreen">','&3' : '</span><span id="mDarkAqua">','&4' : '</span><span id="mDarkRed">','&5' : '</span><span id="mDarkPurple">','&6' : '</span><span id="mGold">','&7' : '</span><span id="mGray">','&8' : '</span><span id="mDarkGray">','&9' : '</span><span id="mBlue">','&a' : '</span><span id="mGreen">','&b' : '</span><span id="mAqua">','&c' : '</span><span id="mRed">','&d' : '</span><span id="mLightPurple">','&e' : '</span><span id="mYellow">','&f' : '</span><span id="mWhite">',}));
+        
+        motd2 = data.servers[2].motd;
+        document.getElementById("motd2").innerHTML =(motd2.allReplace({'§' : '&','§' : '&','&k' : '','&m' : '','&o' : '','&l' : '','&n' : '','&r' : '</span><span id="mWhite">','&0' : '</span><span id="mBlack">','&1' : '</span><span id="mDarkBlue">','&2' : '</span><span id="mDarkGreen">','&3' : '</span><span id="mDarkAqua">','&4' : '</span><span id="mDarkRed">','&5' : '</span><span id="mDarkPurple">','&6' : '</span><span id="mGold">','&7' : '</span><span id="mGray">','&8' : '</span><span id="mDarkGray">','&9' : '</span><span id="mBlue">','&a' : '</span><span id="mGreen">','&b' : '</span><span id="mAqua">','&c' : '</span><span id="mRed">','&d' : '</span><span id="mLightPurple">','&e' : '</span><span id="mYellow">','&f' : '</span><span id="mWhite">',}));
+        
+        motd3 = data.servers[3].motd;
+        document.getElementById("motd3").innerHTML =(motd3.allReplace({'§' : '&','§' : '&','&k' : '','&m' : '','&o' : '','&l' : '','&n' : '','&r' : '</span><span id="mWhite">','&0' : '</span><span id="mBlack">','&1' : '</span><span id="mDarkBlue">','&2' : '</span><span id="mDarkGreen">','&3' : '</span><span id="mDarkAqua">','&4' : '</span><span id="mDarkRed">','&5' : '</span><span id="mDarkPurple">','&6' : '</span><span id="mGold">','&7' : '</span><span id="mGray">','&8' : '</span><span id="mDarkGray">','&9' : '</span><span id="mBlue">','&a' : '</span><span id="mGreen">','&b' : '</span><span id="mAqua">','&c' : '</span><span id="mRed">','&d' : '</span><span id="mLightPurple">','&e' : '</span><span id="mYellow">','&f' : '</span><span id="mWhite">',}));
+        
+        motd4 = data.servers[4].motd;
+        document.getElementById("motd4").innerHTML =(motd4.allReplace({'§' : '&','§' : '&','&k' : '','&m' : '','&o' : '','&l' : '','&n' : '','&r' : '</span><span id="mWhite">','&0' : '</span><span id="mBlack">','&1' : '</span><span id="mDarkBlue">','&2' : '</span><span id="mDarkGreen">','&3' : '</span><span id="mDarkAqua">','&4' : '</span><span id="mDarkRed">','&5' : '</span><span id="mDarkPurple">','&6' : '</span><span id="mGold">','&7' : '</span><span id="mGray">','&8' : '</span><span id="mDarkGray">','&9' : '</span><span id="mBlue">','&a' : '</span><span id="mGreen">','&b' : '</span><span id="mAqua">','&c' : '</span><span id="mRed">','&d' : '</span><span id="mLightPurple">','&e' : '</span><span id="mYellow">','&f' : '</span><span id="mWhite">',}));
+            
+         console.log(data);
+        }
+         
+        })};
+        
+
+        setInterval(function() {
+        console.log("-----------------------")
+        resizeTooltips();
+        getServers();
+        }, 15000);
+          </script>
+</html>
