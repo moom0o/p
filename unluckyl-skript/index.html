@@ -28,12 +28,14 @@ Pex group: <input id="pexGroup"><br><br>
 <button onclick="zetOm()">Klik</button><br><br>
 
 <textarea id="output" disabled>...</textarea>
+<textarea id="givePaper" style="width:50%;height:20px;" disabled>...</textarea>
 </center>
 <script>
 function zetOm(){
 	toolName = document.getElementById("toolName").value;
     pexGroup = document.getElementById("pexGroup").value;
-    document.getElementById("output").value = "on right click:\n if player's tool is paper:\n  name of player's tool is \"" + toolName + "\":\n   message \"&aYou claimed " + pexGroup + " rank!\"\n   make console execute command \"pex user %player% group add " + pexGroup + "\"\n   remove 1 of player's tool from player";
+    document.getElementById("output").value = "on right click:\n if player's tool is paper:\n  name of player's tool is \"" + toolName + "\":\n   message \"&aYou claimed " + pexGroup + " rank!\"\n   make console execute command \"pex user %player% group set " + pexGroup + "\"\n   remove 1 of player's tool from player";
+    document.getElementById("givePaper").value = "/i paper 1 name:" + toolName;
 }
 </script>
 </body>
