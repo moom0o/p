@@ -11,9 +11,17 @@ img {width:100%;}
 
 <center><img src="https://raw.githubusercontent.com/ItsBrian/random/master/final.png"></center>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
 <script>
-var audio = new Audio('https://raw.githubusercontent.com/ItsBrian/random/master/special-song.mp3');
-audio.play();
+    var sound = new Howl({
+      src: ['https://raw.githubusercontent.com/ItsBrian/random/master/special-song.mp3'],
+      volume: 1.0,
+      onend: function () {
+        // alert('Finished!');
+      }
+    });
+    sound.play()
 </script>
 </body>
 </html>
