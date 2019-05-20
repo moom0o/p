@@ -1,0 +1,139 @@
+<!DOCTYPE html><!-- 
+
+
+
+
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄░░░░░░░░░
+░░░░░░░░▄▀░░░░░░░░░░░░▄░░░░░░░▀▄░░░░░░░
+░░░░░░░░█░░▄░░░░▄░░░░░░░░░░░░░░█░░░░░░░
+░░░░░░░░█░░░░░░░░░░░░▄█▄▄░░▄░░░█░▄▄▄░░░
+░▄▄▄▄▄░░█░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██░░
+░██▄▀██▄█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██░░
+░░▀██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██░
+░░░░▀████░▀░░░░▄░░░██░░░▄█░░░░▄░▄█░░██░
+░░░░░░░▀█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██░
+░░░░░░░▄█▄░░░░░░░░░░░▀▄░░▀▀▀▀▀▀▀▀░░▄▀░░
+░░░░░░█▀▀█████████▀▀▀▀████████████▀░░░░
+░░░░░░████▀░░███▀░░░░░░▀███░░▀██▀░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+ 	Follow _ItsBrian_ On Twitter
+	https://www.twitter.com/_ItsBrian_/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+<html>
+<head>
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@_ItsBrian_" />
+	<meta name="twitter:title" content="Is Minehut Offline?" />
+	<meta name="twitter:description" content="Check if Minehut is currently offline. (Updates every minute)" />
+	<meta name="twitter:image" content="https://raw.githubusercontent.com/ItsBrian/p/master/is-minehut-offline/icon.png" />
+
+	    <meta charset='UTF-8'>
+            <meta name="viewport" content="width=device-width, initial-scale=0.6">
+            <link rel="icon" href="icon.png">
+            <meta name='keywords' content='minehut, status, ItsBrian'>
+            <meta name='description' content='Check if Minehut is currently offline. (Updates every minute)'>
+            <meta name='language' content='EN'>
+            <meta name='robots' content='index,follow'>
+            <meta name='abstract' content='Check if Minehut is currently offline. (Updates every minute)'>
+            <meta name='designer' content='Github.com/ItsBrian'>
+            <meta name='owner' content='Github.com/ItsBrian'>
+            <meta name='url' content='http://ItsBrian.github.io/p/is-minehut-offline'>
+            <meta name='pagename' content='Is Minehut Offline?'>
+            <meta name='subtitle' content='Check if Minehut is currently offline. (Updates every minute)'>
+            <meta name='HandheldFriendly' content='True'>
+            <meta name='MobileOptimized' content='320'>
+
+
+<title>Is Minehut Offline?</title>
+<style>
+p {
+	margin-top: 45vh;
+    font-family: Arial;
+    font-size: 10vh;
+    text-align: center
+}
+</style>
+</head>
+<body>
+
+<p id="output"></p>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+function getData(){
+  $.get("https://api.minehut.com/network/simple_stats", function(data) {
+    console.log(data);
+    var playerCount = data.player_count;
+    if (+playerCount < +10){
+      $("#output").html("Yes");
+    } else if (+playerCount >= +10){
+      $("#output").html("No");
+    } else {
+      document.getElementById("output").innerHTML = "Error";
+    }
+  });
+}
+
+getData();
+
+setInterval(function() {
+	getData();
+}, 60000);
+</script>
+</html>
