@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+body {
+margin-top: 30vh;
+background-color: white;
+overflow: hidden;
+}
+
+div {
+animation-name: example;
+animation-duration: 3s;
+animation-timing-function: linear;
+animation-delay: 0s;
+animation-iteration-count: infinite;
+border: 5px solid red;
+height: 150px;
+width: 150px;
+border-radius: 100%;
+border-color: black transparent transparent transparent;
+margin: -5px;
+}
+
+@keyframes example {
+0%     {border-radius: 0px;
+		transform: rotate(0deg)}
+        
+50% 	{border-radius: 100%;
+		transform: rotate(90deg)}
+
+100%   {border-radius: 0px;
+		transform: rotate(360deg)}
+        
+}
+
+</style>
+<center>
+<div><div><div><div></div></div></div></div>
+</center>
+</body>
+</html>
