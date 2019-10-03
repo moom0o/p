@@ -110,7 +110,6 @@ p {
 }
 body { 
     text-align: center;
-    background-color: #090b10;
     font-weight: 700;
     }
 </style>
@@ -126,18 +125,21 @@ function getData(){
   $.get("https://api.minehut.com/network/simple_stats", function(data) {
     console.log(data);
     var serverCount = data.server_count;
-    var serverLimit = data.server_max;
+    var serverLimit = 1114
     var style = document.createElement('style');
 document.head.appendChild(style);
-
+    var style2 = document.createElement('style');
+document.head.appendChild(style2);
     if (+serverCount >= +serverLimit){
-    style.sheet.insertRule('body {background-color: #bd4b31; color: white; font-weight: 700;}');
+    style.sheet.insertRule('body {background-color: #bd4b31; color: white; font-weight: 700; transition-duration: 0.3s;}');
 
 
 
 
       $("#output").html(`Yes ${+serverCount}/${+serverLimit}`);
+      
     } else if (+serverCount <= +serverLimit){
+        style2.sheet.insertRule('body {background-color: #090b10; color: white; font-weight: 700; transition-duration: 0.3s;}');
       $("#output").html(`No ${+serverCount}/${+serverLimit}`);
     } else {
       document.getElementById("output").innerHTML = "Error";
@@ -149,6 +151,6 @@ getData();
 
 setInterval(function() {
 	getData();
-}, 60000);
+}, 600);
 </script>
 </html>
