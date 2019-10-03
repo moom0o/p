@@ -119,11 +119,12 @@ p {
 function getData(){
   $.get("https://api.minehut.com/network/simple_stats", function(data) {
     console.log(data);
-    var playerCount = data.player_count;
-    if (+playerCount < +10){
-      $("#output").html("Yes");
-    } else if (+playerCount >= +10){
-      $("#output").html("No");
+    var serverCount = data.server_count;
+    var serverLimit = data.server_limit;
+    if (+serverCount > +serverLimit || +serverCount = +serverLimit){
+      $("#output").html(`Yes ${+serverCount}/${+serverLimit}`);
+    } else if (+serverCount < +serverLimit){
+      $("#output").html(`No, ${+serverCount}/${+serverLimit}`);
     } else {
       document.getElementById("output").innerHTML = "Error";
     }
