@@ -125,7 +125,7 @@ function getData(){
   $.get("https://api.minehut.com/network/simple_stats", function(data) {
     console.log(data);
     var serverCount = data.server_count;
-    var serverLimit = 1114
+    var serverLimit = data.server_max;
     var style = document.createElement('style');
 document.head.appendChild(style);
     var style2 = document.createElement('style');
@@ -151,6 +151,6 @@ getData();
 
 setInterval(function() {
 	getData();
-}, 600);
+}, 60000);
 </script>
 </html>
