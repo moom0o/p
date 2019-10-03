@@ -110,7 +110,8 @@ p {
 }
 body { 
     text-align: center;
-    background-color: #090b10;    
+    background-color: #090b10;
+    font-weight: 700;
     }
 </style>
 </head>
@@ -126,9 +127,17 @@ function getData(){
     console.log(data);
     var serverCount = data.server_count;
     var serverLimit = data.server_max;
-    if (+serverCount > +serverLimit || +serverCount == +serverLimit){
+    var style = document.createElement('style');
+document.head.appendChild(style);
+
+    if (+serverCount >= +serverLimit){
+    style.sheet.insertRule('body {background-color: #bd4b31; color: white; font-weight: 700;}');
+
+
+
+
       $("#output").html(`Yes ${+serverCount}/${+serverLimit}`);
-    } else if (+serverCount < +serverLimit){
+    } else if (+serverCount <= +serverLimit){
       $("#output").html(`No ${+serverCount}/${+serverLimit}`);
     } else {
       document.getElementById("output").innerHTML = "Error";
