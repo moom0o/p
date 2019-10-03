@@ -121,7 +121,7 @@ function getData(){
     console.log(data);
     var serverCount = data.server_count;
     var serverLimit = data.server_max;
-    if (+serverCount > +serverLimit || +serverCount = +serverLimit){
+    if (+serverCount > +serverLimit || +serverCount == +serverLimit){
       $("#output").html(`Yes ${+serverCount}/${+serverLimit}`);
     } else if (+serverCount < +serverLimit){
       $("#output").html(`No`);
