@@ -120,9 +120,9 @@ function getData(){
   $.get("https://api.minehut.com/network/simple_stats", function(data) {
     console.log(data);
     var serverCount = data.server_count;
-    var serverLimit = data.server_limit;
+    var serverLimit = data.server_max;
     if (+serverCount > +serverLimit || +serverCount = +serverLimit){
-      $("#output").html(`Yes`);
+      $("#output").html(`Yes ${+serverCount}/${+serverLimit}`);
     } else if (+serverCount < +serverLimit){
       $("#output").html(`No`);
     } else {
