@@ -122,9 +122,9 @@ function getData(){
     var serverCount = data.server_count;
     var serverLimit = data.server_limit;
     if (+serverCount > +serverLimit || +serverCount = +serverLimit){
-      $("#output").html(`Yes ${+serverCount}/${+serverLimit}`);
+      $("#output").html(`Yes`);
     } else if (+serverCount < +serverLimit){
-      $("#output").html(`No, ${+serverCount}/${+serverLimit}`);
+      $("#output").html(`No`);
     } else {
       document.getElementById("output").innerHTML = "Error";
     }
