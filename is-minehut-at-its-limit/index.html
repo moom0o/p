@@ -124,7 +124,7 @@ function getData(){
     if (+serverCount > +serverLimit || +serverCount == +serverLimit){
       $("#output").html(`Yes ${+serverCount}/${+serverLimit}`);
     } else if (+serverCount < +serverLimit){
-      $("#output").html(`No`);
+      $("#output").html(`No ${+serverCount}/${+serverLimit}`);
     } else {
       document.getElementById("output").innerHTML = "Error";
     }
