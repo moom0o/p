@@ -136,11 +136,11 @@ document.head.appendChild(style2);
 
 
 
-      $("#output").html(`Yes, ${+serverCount}/${+serverLimit}`);
+      $("#output").html(`Yes, ${+serverCount}/${+serverLimit} servers <br><h6>${data.ram_count / 1000}/${data.ram_max}GB ram<h6>`);
       
     } else if (+serverCount < +serverLimit){
         style2.sheet.insertRule('body {background-color: #090b10; color: white; font-weight: 700; transition-duration: 0.3s;}');
-      $("#output").html(`No, ${+serverCount}/${+serverLimit}\n${data.ram_count / 1000}/${data.ram_max}GB ram`);
+      $("#output").html(`No, ${+serverCount}/${+serverLimit} servers <br><h6>${data.ram_count / 1000}/${data.ram_max}GB ram<h6>`);
     } else {
       document.getElementById("output").innerHTML = "Error";
     }
