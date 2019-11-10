@@ -1,8 +1,4 @@
 <!DOCTYPE html><!-- 
-
-
-
-
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄░░░░░░░░░
 ░░░░░░░░▄▀░░░░░░░░░░░░▄░░░░░░░▀▄░░░░░░░
@@ -17,61 +13,8 @@
 ░░░░░░█▀▀█████████▀▀▀▀████████████▀░░░░
 ░░░░░░████▀░░███▀░░░░░░▀███░░▀██▀░░░░░░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-
  	Follow _ItsBrian_ On Twitter
 	https://www.twitter.com/_ItsBrian_/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -->
 <html>
 <head>
@@ -111,9 +54,7 @@ p {
 body { 
     text-align: center;
     font-weight: 700;
-    line-height: 0
     }
-
 </style>
 </head>
 <body>
@@ -134,23 +75,17 @@ document.head.appendChild(style);
 document.head.appendChild(style2);
     if (+serverCount >= +serverLimit){
     style.sheet.insertRule('body {background-color: #bd4b31; color: white; font-weight: 700; transition-duration: 0.3s;}');
-
-
-
-
-      $("#output").html(`Yes, ${+serverCount}/${+serverLimit} servers <br><h6>${data.ram_count / 1000}/${data.ram_max}GB ram<h6>`);
+      $("#output").html(`Yes, ${+serverCount}/${+serverLimit}`);
       
     } else if (+serverCount < +serverLimit){
         style2.sheet.insertRule('body {background-color: #090b10; color: white; font-weight: 700; transition-duration: 0.3s;}');
-      $("#output").html(`No, ${+serverCount}/${+serverLimit} servers <br><h6>${data.ram_count / 1000}/${data.ram_max}GB ram<h6>`);
+      $("#output").html(`No, ${+serverCount}/${+serverLimit}`);
     } else {
       document.getElementById("output").innerHTML = "Error";
     }
   });
 }
-
 getData();
-
 setInterval(function() {
 	getData();
 }, 10000);
